@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px 20px;
+}
+
+body::before{
+    content:"Student Management System";
+    color:#fff;
+    font-size:35px;
+    font-weight:bold;
+    margin-bottom:30px;
+    letter-spacing:1px;
+}
+
+input[type="text"]{
+    width:380px;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+input[type="text"]:focus{
+    transform:scale(1.02);
+    box-shadow:0 0 10px #38bdf8;
+}
+
+button{
+    padding:12px 28px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+#container{
+    width:100%;
+    max-width:1300px;
+    margin-top:40px;
+}
+
+#container>div{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+#container>div>p,
+#container>div>img,
+#container>div>button{
+    margin:0;
+}
+
+#container>div{
+    counter-reset:item;
+}
+
+#container>div>*{
+    background:#fff;
+}
+
+#container>div{
+    display:grid;
+}
+
+#container>div{
+    gap:0;
+}
+
+#container>div img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+#container>div{
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+
+#container>div::after{
+    content:"";
+}
+
+#container>div{
+    align-items:start;
+}
+
+#container>div{
+    justify-items:stretch;
+}
+
+#container div{
+    display:grid;
+}
+
+#container div{
+    gap:20px;
+}
+
+#container div p,
+#container div img,
+#container div button{
+    background:#fff;
+}
+
+#container div{
+    padding:0;
+}
+
+/* Card Layout */
+#container div{
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+#container div>*{
+    border-radius:12px;
+}
+
+#container div p{
+    padding:10px 15px;
+    font-size:17px;
+    font-weight:600;
+}
+
+#container div img{
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+#container button{
+    width:48%;
+    margin:5px 1%;
+}
+
+#container button[id^="delete"]{
+    background:#dc2626;
+}
+
+#container button[id^="delete"]:hover{
+    background:#b91c1c;
+}
+
+#container button[id^="edit"]{
+    background:#16a34a;
+}
+
+#container button[id^="edit"]:hover{
+    background:#15803d;
+}
+
+@media(max-width:768px){
+
+body::before{
+    font-size:28px;
+}
+
+input[type="text"]{
+    width:95%;
+}
+
+button{
+    width:95%;
+}
+
+#container button{
+    width:100%;
+}
+}
