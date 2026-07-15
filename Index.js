@@ -1,6 +1,8 @@
+const API_BASE = window.location.origin + "/api";
+
 async function fetchData() {
     try {
-        let res = await fetch("https://crud-application-132e.onrender.com/student");
+        let res = await fetch(`${API_BASE}/students`);
         if (!res.ok) {
             throw new Error("Data not fetching");
         }
@@ -40,7 +42,7 @@ function showdata(data){
 
 async function deleteData(id) {
     try {
-        let res = await fetch(`https://crud-application-132e.onrender.com/student${id}`, {
+        let res = await fetch(`${API_BASE}/students/${id}`, {
             method: "DELETE"
         });
         if (!res.ok) {
@@ -57,7 +59,7 @@ async function editData(id){
     let studentId=document.getElementById("id");
     let stName=document.getElementById("name");
     let image=document.getElementById("image");
-    let res=await fetch(`https://crud-application-132e.onrender.com/student${id}`)
+    let res=await fetch(`${API_BASE}/students/${id}`)
         try{
     if(!res.ok){
             throw new Error("Data not getting in inputfields")
@@ -82,7 +84,7 @@ async function savedata() {
         image: image
     };
     let studentMethod = studentId ? "PUT" : "POST";
-    let URL = studentId?`https://crud-application-132e.onrender.com/student${studentId}`: "https://crud-application-132e.onrender.com/student";
+    let URL = studentId ? `${API_BASE}/students/${studentId}` : `${API_BASE}/students`;
 
     try {
 
