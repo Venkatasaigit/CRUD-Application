@@ -10,7 +10,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node app.js",
     "test": "node --test"
   },
   "keywords": [],
