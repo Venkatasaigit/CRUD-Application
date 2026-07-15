@@ -3,19 +3,26 @@ const jsonServer = require("json-server");
 const path = require("path");
 
 const app = express();
-const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+const router = jsonServer.router(path.join(__dirname, "db.json"));
 
-const PORT = process.env.PORT || 10000;
+app.use(express.json());
 
-app.use("/api", middlewares, router);
-
-app.use(express.static(__dirname));
-
+app.use(express.static(path.join(__dirname, ".")));
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "Index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
+app.get("/User", (req, res) => {
+  res.sendFile(path.join(__dirname, "User.html"));
+});
+app.use(jsonServer.defaults());
+app.use("/api", router);
 
-app.listen(PORT, () => {
-    console.log(`Server running on ${PORT}`);
-});
+const port = process.env.PORT || 3000;
+
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+}
+
+module.exports = { app };

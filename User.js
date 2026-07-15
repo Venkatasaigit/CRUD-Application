@@ -1,5 +1,7 @@
+const API_BASE = window.location.origin + "/api";
+
 async function displayData(){
-    let res=await fetch("https://crud-application-132e.onrender.com/student")
+    let res=await fetch(`${API_BASE}/students`);
     try{	
         if(!res.ok){
             throw new Error("Data Not Getting");
