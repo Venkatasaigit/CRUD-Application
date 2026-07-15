@@ -14,6 +14,9 @@ app.get("/", (req, res) => {
 app.get("/User", (req, res) => {
   res.sendFile(path.join(__dirname, "User.html"));
 });
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "student dashboard is running" });
+});
 app.use(jsonServer.defaults());
 app.use("/api", router);
 
